@@ -1,6 +1,8 @@
 # Using this tutorial for inspiration
 # https://roboticsbackend.com/write-minimal-ros2-python-node/
 
+# https://github.com/NVIDIA-AI-IOT/ros2_trt_pose
+
 
 # Importing rclpy, the ROS2 python library
 import rclpy
