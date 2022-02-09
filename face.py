@@ -11,6 +11,8 @@ face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 
 def findFace(frame):
+    # print('face.py')
+
     # Change the frame to greyscale
     gray_image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 

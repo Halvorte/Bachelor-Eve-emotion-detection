@@ -34,6 +34,11 @@ class emotionHelper(Node):
         # Temp display image
         # cv2.imshow("temp", current_frame)
 
+        if not current_frame:
+            print('Current frame is not. Not recieving')
+            self.get_logger().info('Not frame in helper line 40')
+            exit()
+
         # Find face and grayscale it
         faces_detected = findFace(current_frame)
 
