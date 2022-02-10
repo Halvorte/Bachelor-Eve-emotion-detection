@@ -1,0 +1,5 @@
+  File "/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/face.py", line 5
+    from cv2 import cv2.data
+                       ^
+SyntaxError: invalid syntax
+
