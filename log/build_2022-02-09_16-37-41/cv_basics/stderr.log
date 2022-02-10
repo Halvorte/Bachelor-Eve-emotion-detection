@@ -1,0 +1,5 @@
+  File "/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/helper.py", line 16
+    import .model_optimal.h5
+           ^
+SyntaxError: invalid syntax
+
