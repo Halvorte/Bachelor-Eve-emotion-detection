@@ -1,10 +1,11 @@
 # import find face from process-image
-from .face import findFace
+from.face import findFace
 
 # Import models
-
 import tensorflow as tf
 import numpy as np
+import h5py
+from keras.models import load_model
 
 import rclpy  # Python library for ROS 2
 from rclpy.node import Node  # Handles the creation of nodes
@@ -12,10 +13,14 @@ from sensor_msgs.msg import Image  # Image is the message type
 from cv_bridge import CvBridge  # Package to convert between ROS and OpenCV Images
 import cv2  # OpenCV library
 
+model = tf.keras.models.load_model("/home/erlend/dev_ws/src/cv_basics/cv_basics/model_optimal.h5")
+model.load_weights("/home/erlend/dev_ws/src/cv_basics/cv_basics/model_weights.h5")
+face_haar_cascade = cv2.CascadeClassifier("/home/erlend/dev_ws/src/cv_basics/cv_basics"
+                                          "/haarcascade_frontalface_default.xml")
 
 class emotionHelper(Node):
     def __init__(self):
-        super().__init__('Algorithm_node')  # Name of the nodee
+        super().__init__('Algorithm_node')  # Name of the nodeeS
 
         # Create the subscriber. This subscriber will receive an Image
         # from the video_frames topic. The queue size is 10 messages.
@@ -34,13 +39,11 @@ class emotionHelper(Node):
         # Temp display image
         # cv2.imshow("temp", current_frame)
 
-        if not current_frame:
-            print('Current frame is not. Not recieving')
-            self.get_logger().info('Not frame in helper line 40')
-            exit()
+        gray_image = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
+        # We pass the image, scaleFactor and min neighbour
+        faces_detected = face_haar_cascade.detectMultiScale(gray_image, 1.32, 5)
 
         # Find face and grayscale it
-        faces_detected = findFace(current_frame)
 
         # Draw Triangles around the faces detected
         for (x, y, w, h) in faces_detected:

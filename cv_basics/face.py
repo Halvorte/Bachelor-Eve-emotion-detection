@@ -7,7 +7,8 @@ import cv2
 # import ~/dev_ws/src/cv_basics/cv_basics/haarcascade_frontalface_default.xml
 # import haarcascade_frontalface_default.xml
 
-face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_haar_cascade = cv2.CascadeClassifier("/home/erlend/dev_ws/src/cv_basics/cv_basics"
+                                          "/haarcascade_frontalface_default.xml")
 
 
 def findFace(frame):
