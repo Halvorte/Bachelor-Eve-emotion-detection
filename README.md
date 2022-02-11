@@ -1,5 +1,7 @@
 # Bachelor-Eve-emotion-detection
-Code for Bachelor assignment where we attemt to make a ROS2 node run a deep learning model.
+Code for Bachelor assignment where we attemt to make a ROS2 node run a deep learning model to predict emotions.
+
+We plan on trying to implement the emotion detection node to an EVE robot.
 
 This is a directory with two nodes. One to publish video-frames from a camera, and the other to subscribe to the cideo-frames and predict emotion.
 
@@ -12,6 +14,8 @@ We used the following tutorial for inspiration when we made the nodes. The tutor
 4. Build the package from the root of your workspace: ``` colcon build --packages-select cv_basics ```
 5. Run the publisher node: ```ros2 run cv_basics img_publisher```
 6. Run the subscriber node: ```ros2 run cv_basics img_publisher```
+
+If you cant run the nodes, you might need to source the workspace: ```source ~/dev_ws/install/setup.bash```
 
 ## How it works
 The emotion detection works by using the video-frames. Each frame is grayscaled so the haar cascade can detect faces. The face or faces detected then gets sent to the deep learning model which predicts an emotion.
