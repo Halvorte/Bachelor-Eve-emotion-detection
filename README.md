@@ -32,7 +32,10 @@ If you cant run the nodes, you might need to source the workspace: ```source ~/d
 
 
 ## How it works
-The emotion detection works by using the video-frames. Each frame is grayscaled so the haar cascade can detect faces. The face or faces detected then gets sent to the deep learning model which predicts an emotion.
+The emotion detection works by using the video-frames. Each frame is grayscaled so the haar cascade can detect faces. The face or faces detected then gets sent to the deep learning model which predicts an emotion. The predicted emotion is printed along with a border around the detected face.
+
+![example](https://user-images.githubusercontent.com/75445926/153725590-baba1a94-ef3c-41e7-8113-4add052c25f9.png  "Example output")
+
 
 ## Status
 
