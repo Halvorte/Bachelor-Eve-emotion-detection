@@ -1,23 +1,23 @@
 # import find face from process-image
-from .face import findFace
+from .face import findFace          # Import the face.py file to detect faces and grayscale images
 
-# Import models
+import tensorflow as tf             # Tensorflow to use models to predict emotion
+import numpy as np                  # Used for math
 
-import tensorflow as tf
-import numpy as np
+import rclpy                        # Python library for ROS 2
+from rclpy.node import Node         # Handles the creation of nodes
+from sensor_msgs.msg import Image   # Image is the message type
+from cv_bridge import CvBridge      # Package to convert between ROS and OpenCV Images
+import cv2                          # OpenCV library
 
 
-import rclpy # Python library for ROS 2
-from rclpy.node import Node # Handles the creation of nodes
-from sensor_msgs.msg import Image # Image is the message type
-from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
-import cv2 # OpenCV library
+# Absolute path for models. Different for different computers
+#model = tf.keras.models.load_model('/home/halvor/dev_ws/model_optimal.h5')
+#model.load_weights('/home/halvor/dev_ws/model_weights.h5')
 
-#from .model_optimal import *
-#from .model_weights import *
-
-model = tf.keras.models.load_model('/home/halvor/dev_ws/model_optimal.h5')
-model.load_weights('/home/halvor/dev_ws/model_weights.h5')
+# Relative path for model
+model = tf.keras.models.load_model('dev_ws/model_optimal.h5')
+model.load_weights('dev_ws/model_weights.h5')
 
 
 class emotionHelper(Node):
@@ -35,39 +35,17 @@ class emotionHelper(Node):
         
 
     def start(self, data):
-        self.get_logger().info('Recieving frames')  # Priting recieving frames to the console
+        self.get_logger().info('Recieving frames')  # Printing receiving frames to the console
 
         # Convert ROS Image message to OpenCV image
         current_frame = self.br.imgmsg_to_cv2(data)
+
         
-        # Temp display image
-        #cv2.imshow("temp", current_frame)
-        
-        #cv2.imshow("test show image",current_frame)
-        
-        # Find face and grayscale it
+        # Find face and get grayscaled image
         faces_detected, gray_image = findFace(current_frame)
         
-        
-        # test
-        #faces_detected = cv2.resize(current_frame, (1000, 700))
-        #resize_image = cv2.resize(faces_detected, (1000, 700))
-        #cv2.imshow('face', faces_detected)
-        #cv2.imshow('Emotion', resize_image)
-        #cv2.waitKey(10)
-        
-        
-        '''
-        
-        if not current_frame.all():
-            print('Current frame is not. Not recieving')
-            self.get_logger().info('Not frame in helper line 40')
-            exit()
-        
-        '''
-        
 
-        # Draw Triangles around the faces detected
+        # Draw Triangles around the faces detected, and get prediction from model
         for (x, y, w, h) in faces_detected:
             cv2.rectangle(current_frame, (x, y), (x + w, y + h), (255, 0, 0), thickness=7)
             roi_gray = gray_image[y: y + w, x: x + h]
@@ -82,7 +60,7 @@ class emotionHelper(Node):
             # Get the prediction of the model
             predictions = model.predict(image_pixels)
             max_index = np.argmax(predictions[0])
-            emotion_detection = ('Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise')  # monkey = happy
+            emotion_detection = ('Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise')
             emotion_prediction = emotion_detection[max_index]
 
             # Get the percentage of the predicted emotion
@@ -96,10 +74,7 @@ class emotionHelper(Node):
             # Write the percentage to the frame
             cv2.putText(current_frame, percentage, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 3)
             
-	
-	#resize_image = cv2.resize(faces_detected, (1000, 700))
-	#cv2.imshow('Emotion', resize_image)
-	
+
         resize_image = cv2.resize(current_frame, (1000, 700))
-        cv2.imshow('Emotion', resize_image)
+        cv2.imshow('Emotion', resize_image)     # Display video frame with square around face and prediction
         cv2.waitKey(10)
