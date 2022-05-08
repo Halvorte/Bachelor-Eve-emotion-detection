@@ -35,7 +35,9 @@ Make sure the paths are correct for it to find the model and Haar Cascade
 The emotion detection works by using the video-frames. A Haar Cascade algorithm for frontal face detects faces. The face or faces detected then gets sent to the deep learning model which predicts an emotion. The predicted emotion is printed along with a border around the detected face. The last 
 The best.onnx file is the deep learning model. It is trained on the 
 
-![example](https://user-images.githubusercontent.com/75445926/153725590-baba1a94-ef3c-41e7-8113-4add052c25f9.png  "Example output")
+<!--- ![example](https://user-images.githubusercontent.com/75445926/153725590-baba1a94-ef3c-41e7-8113-4add052c25f9.png  "Example output")--->
+![Demo_bilde1_edited](https://user-images.githubusercontent.com/75445926/167296027-54db7fe7-8d7c-43c9-aba0-907f5d96fe28.png)
+
 
 
 ## Status
