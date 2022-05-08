@@ -5,7 +5,7 @@ from .helper import *       # Import emotion helper class from detect-emotion.py
 
 def main(args=None):
     rclpy.init(args=None)
-    emotion_helper = emotionHelper()
+    emotion_helper = EmotionHelper()
     
     # The program will pause here until you kill the node. Any thread will continue to execute.
     rclpy.spin(emotion_helper)

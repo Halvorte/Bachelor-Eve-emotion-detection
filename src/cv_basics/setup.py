@@ -1,6 +1,4 @@
 from setuptools import setup
-import os
-from glob import glob
 
 package_name = 'cv_basics'
 
@@ -12,21 +10,19 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob('launch/*.haarcascade_frontalface_default.xml')),
-        ('share/' + package_name + '/' + package_name, ['haarcascade_frontalface_default.xml']),
-        ('share/' + package_name, ['haarcascade_frontalface_default.xml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='halvor',
-    maintainer_email='halvors@live.no',
+    maintainer_email='halvor@todo.todo',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        'img_publisher = cv_basics.webcam_pub:main',
-        'img_subscriber = cv_basics.webcam_sub:main',
+          'img_publisher = cv_basics.webcam_pub:main',
+          'img_subscriber = cv_basics.webcam_sub:main',
+          'face_reciever = cv_basics.face_reciever:main',
         ],
     },
 )

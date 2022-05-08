@@ -1,4 +1,5 @@
 [console_scripts]
+face_reciever = cv_basics.face_reciever:main
 img_publisher = cv_basics.webcam_pub:main
 img_subscriber = cv_basics.webcam_sub:main
 

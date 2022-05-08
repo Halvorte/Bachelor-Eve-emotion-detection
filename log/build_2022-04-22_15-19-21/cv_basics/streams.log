@@ -1,0 +1,33 @@
+[0.416s] Invoking command in '/home/halvor/dev_ws/src/cv_basics': PYTHONPATH=/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/cv_basics build --build-base /home/halvor/dev_ws/build/cv_basics/build install --prefix /home/halvor/dev_ws/install/cv_basics --record /home/halvor/dev_ws/build/cv_basics/install.log --single-version-externally-managed
+[0.564s] running egg_info
+[0.564s] writing ../../build/cv_basics/cv_basics.egg-info/PKG-INFO
+[0.564s] writing dependency_links to ../../build/cv_basics/cv_basics.egg-info/dependency_links.txt
+[0.565s] writing entry points to ../../build/cv_basics/cv_basics.egg-info/entry_points.txt
+[0.565s] writing requirements to ../../build/cv_basics/cv_basics.egg-info/requires.txt
+[0.565s] writing top-level names to ../../build/cv_basics/cv_basics.egg-info/top_level.txt
+[0.590s] reading manifest file '../../build/cv_basics/cv_basics.egg-info/SOURCES.txt'
+[0.591s] writing manifest file '../../build/cv_basics/cv_basics.egg-info/SOURCES.txt'
+[0.591s] running build
+[0.591s] running build_py
+[0.591s] copying cv_basics/webcam_sub.py -> /home/halvor/dev_ws/build/cv_basics/build/lib/cv_basics
+[0.591s] copying cv_basics/helper.py -> /home/halvor/dev_ws/build/cv_basics/build/lib/cv_basics
+[0.592s] running install
+[0.592s] running install_lib
+[0.593s] copying /home/halvor/dev_ws/build/cv_basics/build/lib/cv_basics/webcam_sub.py -> /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics
+[0.593s] copying /home/halvor/dev_ws/build/cv_basics/build/lib/cv_basics/helper.py -> /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics
+[0.593s] byte-compiling /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/webcam_sub.py to webcam_sub.cpython-38.pyc
+[0.594s] byte-compiling /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/helper.py to helper.cpython-38.pyc
+[0.595s]   File "/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/helper.py", line 14
+[0.595s]     face_haar_cascade = cv2.CascadeClassifier('dev_ws/haarcascade_frontalface_default.xml)
+[0.595s]                                                                                          ^
+[0.595s] SyntaxError: EOL while scanning string literal
+[0.595s] 
+[0.595s] running install_data
+[0.595s] running install_egg_info
+[0.596s] removing '/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics-0.0.0-py3.8.egg-info' (and everything under it)
+[0.596s] Copying ../../build/cv_basics/cv_basics.egg-info to /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics-0.0.0-py3.8.egg-info
+[0.597s] running install_scripts
+[0.609s] Installing img_publisher script to /home/halvor/dev_ws/install/cv_basics/lib/cv_basics
+[0.609s] Installing img_subscriber script to /home/halvor/dev_ws/install/cv_basics/lib/cv_basics
+[0.609s] writing list of installed files to '/home/halvor/dev_ws/build/cv_basics/install.log'
+[0.622s] Invoked command in '/home/halvor/dev_ws/src/cv_basics' returned '0': PYTHONPATH=/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/cv_basics build --build-base /home/halvor/dev_ws/build/cv_basics/build install --prefix /home/halvor/dev_ws/install/cv_basics --record /home/halvor/dev_ws/build/cv_basics/install.log --single-version-externally-managed

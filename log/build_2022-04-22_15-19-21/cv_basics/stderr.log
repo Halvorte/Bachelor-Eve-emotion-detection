@@ -1,0 +1,5 @@
+  File "/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/helper.py", line 14
+    face_haar_cascade = cv2.CascadeClassifier('dev_ws/haarcascade_frontalface_default.xml)
+                                                                                         ^
+SyntaxError: EOL while scanning string literal
+

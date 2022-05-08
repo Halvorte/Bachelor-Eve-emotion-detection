@@ -1,0 +1,25 @@
+[0.414s] Invoking command in '/home/halvor/dev_ws/src/cv_basics': PYTHONPATH=/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/cv_basics build --build-base /home/halvor/dev_ws/build/cv_basics/build install --prefix /home/halvor/dev_ws/install/cv_basics --record /home/halvor/dev_ws/build/cv_basics/install.log --single-version-externally-managed
+[0.549s] running egg_info
+[0.549s] writing ../../build/cv_basics/cv_basics.egg-info/PKG-INFO
+[0.549s] writing dependency_links to ../../build/cv_basics/cv_basics.egg-info/dependency_links.txt
+[0.549s] writing entry points to ../../build/cv_basics/cv_basics.egg-info/entry_points.txt
+[0.550s] writing requirements to ../../build/cv_basics/cv_basics.egg-info/requires.txt
+[0.550s] writing top-level names to ../../build/cv_basics/cv_basics.egg-info/top_level.txt
+[0.575s] reading manifest file '../../build/cv_basics/cv_basics.egg-info/SOURCES.txt'
+[0.576s] writing manifest file '../../build/cv_basics/cv_basics.egg-info/SOURCES.txt'
+[0.576s] running build
+[0.576s] running build_py
+[0.576s] copying cv_basics/helper.py -> /home/halvor/dev_ws/build/cv_basics/build/lib/cv_basics
+[0.576s] running install
+[0.576s] running install_lib
+[0.577s] copying /home/halvor/dev_ws/build/cv_basics/build/lib/cv_basics/helper.py -> /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics
+[0.577s] byte-compiling /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/helper.py to helper.cpython-38.pyc
+[0.579s] running install_data
+[0.579s] running install_egg_info
+[0.580s] removing '/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics-0.0.0-py3.8.egg-info' (and everything under it)
+[0.581s] Copying ../../build/cv_basics/cv_basics.egg-info to /home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics-0.0.0-py3.8.egg-info
+[0.581s] running install_scripts
+[0.594s] Installing img_publisher script to /home/halvor/dev_ws/install/cv_basics/lib/cv_basics
+[0.594s] Installing img_subscriber script to /home/halvor/dev_ws/install/cv_basics/lib/cv_basics
+[0.594s] writing list of installed files to '/home/halvor/dev_ws/build/cv_basics/install.log'
+[0.607s] Invoked command in '/home/halvor/dev_ws/src/cv_basics' returned '0': PYTHONPATH=/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/cv_basics build --build-base /home/halvor/dev_ws/build/cv_basics/build install --prefix /home/halvor/dev_ws/install/cv_basics --record /home/halvor/dev_ws/build/cv_basics/install.log --single-version-externally-managed

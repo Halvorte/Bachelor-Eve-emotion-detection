@@ -1,0 +1,5 @@
+  File "/home/halvor/dev_ws/install/cv_basics/lib/python3.8/site-packages/cv_basics/webcam_pub.py", line 51
+    ip = 192.168.100.10
+                ^
+SyntaxError: invalid syntax
+

@@ -10,6 +10,12 @@ from rclpy.node import Node # Handles the creation of nodes
 from sensor_msgs.msg import Image # Image is the message type
 from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 import cv2 # OpenCV library
+
+# For zed streaming reciever
+import sys
+import pyzed.sl as sl
+import cv2
+import ipaddress
  
 class ImagePublisher(Node):
   """
@@ -38,6 +44,29 @@ class ImagePublisher(Node):
          
     # Used to convert between ROS and OpenCV images
     self.br = CvBridge()
+
+    # for zed reciever
+    #init = sl.InitParameters()
+    #init.camera_resolution = sl.RESOLUTION.HD720
+    #init.depth_mode = sl.DEPTH_MODE.PERFORMANCE
+    #ip = ipaddress.ip_address('192.168.100.10')
+    #ip = '192.168.100.10'
+    #init.set_from_stream(ip)
+
+
+    #cam = sl.Camera()
+    #status = cam.open(init)
+    #if status != sl.ERROR_CODE.SUCCESS:
+    #  print(repr(status))
+    #  exit(1)
+
+    #runtime = sl.RuntimeParameters()
+    #self.mat = sl.Mat()
+
+    #err = cam.grab(runtime)
+    #if (err == sl.ERROR_CODE.SUCCESS):
+    #  cam.retrieve_image(self.mat, sl.VIEW.LEFT)
+      #cv2.imshow("ZED", mat.get_data())
    
   def timer_callback(self):
     """
@@ -48,12 +77,18 @@ class ImagePublisher(Node):
     # This method returns True/False as well
     # as the video frame.
     ret, frame = self.cap.read()
+
+    #img = self.mat.get_data()
           
     if ret == True:
       # Publish the image.
       # The 'cv2_to_imgmsg' method converts an OpenCV
       # image to a ROS 2 image message
       self.publisher_.publish(self.br.cv2_to_imgmsg(frame))
+      #self.publisher_.publish(self.br.cv2_to_imgmsg(img))
+
+    # self.publisher_.publish(self.br.cv2_to_imgmsg(img))
+    # cv2.imshow('woa', self.mat.get_data())
  
     # Display the message on the console
     self.get_logger().info('Publishing video frame')
