@@ -22,7 +22,7 @@ We used [this](https://automaticaddison.com/getting-started-with-opencv-in-ros-2
 3. Check that all the dependencies needed are installed: ``` rosdep install -i --from-path src --rosdistro foxy -y ```
 4. Build the package from the root of your workspace: ``` colcon build --packages-select cv_basics ```
 5. Run the image publisher node: ```ros2 run cv_basics img_publisher```
-6. Run the expression detection node: ```ros2 run cv_basics img_publisher```
+6. Run the expression detection node: ```ros2 run cv_basics img_subscriber```
 7. Run the face_reciever node: ```ros2 run cv_basics face_reciever```
 
 ### If you encounter problems
