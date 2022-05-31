@@ -30,9 +30,6 @@ class ImageSubscriber(Node):
             10)
         self.subscription  # prevent unused variable warning
 
-        # Used to convert between ROS and OpenCV images
-        self.br = CvBridge()
-
     def listener_callback(self, msg):
         """
         Callback function.
@@ -83,8 +80,9 @@ class ImageSubscriber(Node):
            #time.sleep(2)
            #image.close()
 
+        image = cv2.resize(image, (640, 640))
         cv2.imshow('result', image)
-        time.sleep(1)
+        cv2.waitKey(10) & 0XFF
 
 def main(args=None):
     # Initialize the rclpy library
